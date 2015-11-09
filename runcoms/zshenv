@@ -1,11 +1,22 @@
 #
 # Defines environment variables.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Vagrant
+export VAGRANT_VMWARE_CLONE_DIRECTORY="~/artifacts/vmware"
+export VAGRANT_HOME="~/artifacts/vagrant.d"
+
+# Packer
+export PACKER_CACHE_DIR="~/artifacts/packer_cache"
+
+# Change default location of Hombrew-Cask symlink location
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Docker
+export DOCKER_CONFIG="~/artifacts/docker"
