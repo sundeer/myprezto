@@ -19,4 +19,4 @@ export PACKER_CACHE_DIR="~/artifacts/packer_cache"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Docker
-export DOCKER_CONFIG="~/artifacts/docker"
+# export DOCKER_CONFIG="~/artifacts/docker"
