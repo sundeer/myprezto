@@ -30,3 +30,6 @@ eval "$(direnv hook /use/local/bin/zsh)"
 #
 #   chmod go-w /usr/local/share
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Automatically load pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
