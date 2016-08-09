@@ -36,15 +36,24 @@ fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
-# Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
+# Set the list of directories that cd searches.
+cdpath=(
+  ~
+  $cdpath
+)
+
+# Need to search for pyenv shims after pipsi and homebrew bins
+eval "$(pyenv init -)"
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  # Set for pipsi
+  ~/.local/bin
+
+  # pyenv shim path must precede homebrew paths
+  ~/.pyenv/shims
+
   /usr/local/{bin,sbin}
-  /opt/vmware/appcatalyst/bin
   $path
 )
 

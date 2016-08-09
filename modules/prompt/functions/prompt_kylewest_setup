@@ -27,6 +27,11 @@ function prompt_kylewest_precmd {
   if (( $+functions[ruby-info] )); then
     ruby-info
   fi
+
+  # Check for activated virtualenv
+  if (( $+functions[python-info] )); then
+    python-info
+  fi
 }
 
 function prompt_kylewest_setup {
@@ -55,11 +60,14 @@ function prompt_kylewest_setup {
   zstyle ':prezto:module:git:info:keys' format 'prompt' '- %b%D '
 
   # Set ruby-info parameters.
-  zstyle ':prezto:module:ruby:info:version' format '%F{blue}[%v]%f'
+  zstyle ':prezto:module:ruby:info:version' format '%F{red}[%v]%f'
+
+  # virtualenv name.
+  zstyle ':prezto:module:python:info:virtualenv' format '%F{green}[%v]%f'
 
   # Define prompts.
   PROMPT='%F{cyan}%c%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
-  RPROMPT='${ruby_info[version]}'
+  RPROMPT='$python_info[virtualenv] $ruby_info[version]'
 }
 
 prompt_kylewest_setup "$@"

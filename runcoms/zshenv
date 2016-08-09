@@ -18,5 +18,11 @@ export PACKER_CACHE_DIR="~/artifacts/packer_cache"
 # Change default location of Hombrew-Cask symlink location
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Docker
-# export DOCKER_CONFIG="~/artifacts/docker"
+# Avoid rate limiting while using homebrew
+export HOMEBREW_GITHUB_API_TOKEN="token"
+
+# Opt out of google analytics
+export HOMEBREW_NO_ANALYTICS=1
+
+# Cookiecutter config location
+export COOKIECUTTER_CONFIG=~/dev/cookiecutters/config.yaml

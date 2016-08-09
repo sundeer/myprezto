@@ -12,7 +12,7 @@ fi
 
 # Customize to your needs...
 
-# Use direnv for chefdk integration with RVM
+# Use direnv
 eval "$(direnv hook /use/local/bin/zsh)"
 
 ### From homebrew installed zsh-completions
@@ -31,5 +31,5 @@ eval "$(direnv hook /use/local/bin/zsh)"
 #   chmod go-w /usr/local/share
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# Automatically load pyenv-virtualenv
-eval "$(pyenv virtualenv-init -)"
+alias py='python'
+alias i='invoke'

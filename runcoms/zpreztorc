@@ -36,8 +36,6 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'homebrew' \
   'git' \
-  'python'\
-  'ruby' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
